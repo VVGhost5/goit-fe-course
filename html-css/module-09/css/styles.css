@@ -35,35 +35,30 @@
     url("../fonts/roboto-v20-latin-300.woff") format("woff");
 }
 
-.header-background {
+.header {
+  padding-top: 28px;
+  padding-bottom: 138px;
   background-position: center 0;
-  background-image: url("../img/header-mobile.png");
+  background-image: url("../img/header-desktop.png");
+  background-color: rgb(26, 25, 21);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.container {
-  max-width: 320px;
-  margin: 0 auto;
+.authorization__block {
+  margin-bottom: 128px;
 }
 
-.header__login-with-title-block {
-  max-width: 100%;
-  padding-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.login__block {
+.authorization__list {
   display: flex;
-  justify-content: space-between;
-  width: 41.25%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 8rem;
+  justify-content: center;
 }
 
-.login__button {
+.authorization__list-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.authorization__button {
   position: relative;
   display: block;
   font-size: 0.875rem;
@@ -75,9 +70,9 @@
   color: var(--login-link-color);
 }
 
-.login__button::before {
-  content: "";
+.authorization__button::before {
   position: absolute;
+  content: "";
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -89,15 +84,14 @@
   transition: border 0.2s linear;
 }
 
-.login__button:hover::before {
+.authorization__button:hover::before {
   cursor: pointer;
   border: 0.125rem solid var(--login-link-color);
   border-radius: 1.25rem;
 }
 
-.header__title {
-  margin-bottom: 2.25rem;
-  text-align: center;
+.header__logo {
+  margin-bottom: 36px;
   font-size: 1.25rem;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
@@ -105,10 +99,15 @@
   color: var(--header-title-color);
 }
 
-.header__sub-title {
+.header__block {
   text-align: center;
-  margin-bottom: 1.125rem;
-  font-size: 1.875rem;
+}
+
+.header__sub-title {
+  max-width: 276px;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  font-size: 28px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -116,22 +115,19 @@
 }
 
 .header__descrpiption {
-  text-align: center;
-  margin-bottom: 1.125rem;
-  font-size: 0.875rem;
+  max-width: 218px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
   color: var(--header-descrpiption-color);
 }
 
-.find-partner-button-block {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 8.625rem;
-}
-
-.find-partner-button {
+.header__button {
   display: block;
-  width: 87.5%;
+  margin: auto auto;
+  min-width: 280px;
   height: 2.5rem;
   outline: none;
   border: none;
@@ -139,39 +135,49 @@
   font-size: 0.875rem;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  text-align: center;
   color: var(--find-your-partner-button-text-color);
   background-color: var(--find-your-partner-button-color);
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
-.find-partner-button:hover {
+.header__button:hover {
   cursor: pointer;
   background-color: var(--find-your-partner-button-text-color);
   color: var(--find-your-partner-button-color);
 }
 
-.meet-your-partner-title {
-  padding-top: 4.5rem;
-  margin-bottom: 1.125rem;
+.meet-your-partner {
+  padding-top: 65px;
+  padding-bottom: 56px;
+}
+
+.meet-your-partner__block {
+  margin-bottom: 18px;
+}
+
+.meet-your-partner__title {
   text-align: center;
-  font-size: 1.375rem;
+  font-size: 22px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: var(--meet-partner-title-color);
 }
 
+.meet-your-partner__list-item {
+  margin-bottom: 20px;
+}
+
 .partner-card {
   margin: 0 auto;
-  max-width: 12.125rem;
+  max-width: 194px;
 }
 
 .partner-card__image {
   position: relative;
-  max-width: 7.5625rem;
+  max-width: 121px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1.125rem;
+  margin-bottom: 18px;
 }
 
 .partner-card__image::after {
@@ -216,7 +222,7 @@
 
 .partner-card__name {
   text-align: center;
-  margin-bottom: 1.125rem;
+  margin-bottom: 18px;
   font-size: 0.875rem;
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
@@ -224,7 +230,6 @@
 }
 
 .partner-card__descrpiption {
-  padding-bottom: 1.75rem;
   text-align: center;
   font-size: 0.875rem;
   font-family: "Roboto", sans-serif;
@@ -232,12 +237,11 @@
   color: var(--partner-descrpiption);
 }
 
-.see-another-partners-button {
+.see-another-partners__button {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 3.5rem;
-  width: 87.5%;
+  min-width: 280px;
   height: 2.5rem;
   outline: none;
   border-radius: 1.25rem;
@@ -250,8 +254,40 @@
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 
-.see-another-partners-button:hover {
+.see-another-partners__button:hover {
   cursor: pointer;
   background-color: var(--see-other-partner-button-color);
   color: var(--see-other-partner-button-hover-color);
+}
+
+@media (min-width: 768px) {
+
+  .header {
+    padding-top: 50px;
+    padding-bottom: 234px;
+    background-size: cover;
+  }
+
+  .authorization__block {
+    margin-bottom: 160px;
+  }
+
+  .header__sub-title {
+    min-width: 504px;
+    font-size: 52px;
+  }
+
+  .header__descrpiption {
+    min-width: 404px;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .header__button {
+    min-width: 226px;
+  }
+
+  .see-another-partners__button {
+    min-width: 192px;
+  }
 }
